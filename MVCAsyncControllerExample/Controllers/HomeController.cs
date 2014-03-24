@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace MVCAsyncControllerExample.Controllers
 {
+    //an example of an asynchronous controller
     public class HomeController : AsyncController
     {
         public ActionResult Index()
@@ -15,6 +16,8 @@ namespace MVCAsyncControllerExample.Controllers
             return View();
         }
 
+
+        //For async controller methods we impelement two methods, one with Async suffix and one with Completed suffix
         public void getDataAsync(string term)
         {
             AsyncManager.OutstandingOperations.Increment();
